@@ -13,3 +13,13 @@ Simple Python program to manage users.
 - Python
 - Git
 - GitHub
+
+## Environment
+
+- Arch Linux
+- Neovim
+
+## Run
+
+```bash
+python main.py
