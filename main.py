@@ -8,8 +8,8 @@ def add_user():
 def show_users():
     try:
         with open("users.txt", "r") as f:
-            for line in f:
-                print(line.strip())
+            for i, line in enumerate(f, start=1):
+                print(f"{i}. {line.strip()}")
     except FileNotFoundError:
         print("No users yet.")
 
