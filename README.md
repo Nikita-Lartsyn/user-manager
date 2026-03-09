@@ -1,13 +1,15 @@
 # User Manager
 
-My first Python project.
+Simple Python program to manage users.
 
 ## Features
-- add users
+
+- add user
 - show users
-- save data
+- data saved in file
 
 ## Tech
+
 - Python
 - Git
 - GitHub
