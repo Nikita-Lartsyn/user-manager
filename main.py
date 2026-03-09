@@ -42,12 +42,44 @@ def delete_user():
     print("\nUser deleted")
 
 
+def rename_user():
+    with open("users.txt", "r") as f:
+        users = f.readlines()
+
+    for i, user in enumerate(users, start=1):
+        print(f"{i}. {user.strip()}")
+
+    try:
+        index = int(input("\nWhich user do you want to rename? ")) - 1
+    except ValueError:
+        print("\nThis isn't a number")
+        return
+
+    if not (0 <= index < len(users)):
+        print("\nInvalid user number")
+        return
+
+    new_name = input("Enter new name: ").strip()
+
+    if not new_name:
+        print("\nName cannot be empty")
+        return
+
+    users[index] = new_name + "\n"
+
+    with open("users.txt", "w") as f:
+        f.writelines(users)
+
+    print("\nUser renamed")
+
+
 def menu():
     while True:
         print("\n1. Add user")
         print("2. Show users")
-        print("3. Delete user")
-        print("4. Exit")
+        print("3. Rename user")
+        print("4. Delete user")
+        print("5. Exit")
 
         choice = input("Choose an option: ")
 
@@ -56,8 +88,10 @@ def menu():
         elif choice == "2":
             show_users()
         elif choice == "3":
+            rename_user()
+        elif choice =="4":
             delete_user()
-        elif choice == "4":
+        elif choice == "5":
             break
         else:
             print("Invalid option")
