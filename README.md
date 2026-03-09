@@ -4,9 +4,11 @@ Simple Python program to manage users.
 
 ## Features
 
-- add user
-- show users
-- data saved in file
+- Add user
+- Show users
+- Rename user
+- Delete user
+- Users are saved in file (`users.txt`)
 
 ## Tech
 
